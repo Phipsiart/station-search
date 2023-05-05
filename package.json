@@ -1,0 +1,12 @@
+{
+  "name": "station-search-js",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Phipsiart",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "express": "^4.18.2",
+    "node-fetch": "2"
+  }
+}
