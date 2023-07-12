@@ -2,13 +2,10 @@ const express = require('express');
 const fetch = require('node-fetch');
 const app = express();
 
-app.get('/api', async (req, res) => {
-  let station = req.query.station || "";
+app.get('/station/search/', async (req, res) => {
+  let name = req.query.name || "";
   let results = req.query.results || "1";
-
-  console.log(station)
-  console.log(results)
-  const fetchstationurl  = "http://transport.phipsiart.de/stations?query=" + station + "&" + results
+  const fetchstationurl  = "http://transport.phipsiart.de/stations?query=" + name  + "&" + results
 
   try {
     const response = await fetch(fetchstationurl);
@@ -25,7 +22,7 @@ app.get('/api', async (req, res) => {
     });
   }
 });
-
 app.listen(3000, () => {
   console.log('Server listening on port 3000');
 });
+
